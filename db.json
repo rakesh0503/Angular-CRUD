@@ -1,0 +1,83 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "firstName": "dfadjkh",
+      "lastName": "jhafdkh",
+      "email": "adjfl@123",
+      "mobile": "8064648431",
+      "salary": "5130"
+    },
+    {
+      "id": 3,
+      "firstName": "Ajay",
+      "lastName": "Londhe",
+      "email": "aj@123",
+      "mobile": "8087993909",
+      "salary": "35000"
+    },
+    {
+      "id": 4,
+      "firstName": null,
+      "lastName": null,
+      "email": null,
+      "mobile": null,
+      "salary": null
+    },
+    {
+      "id": 5,
+      "firstName": "Ganesh",
+      "lastName": "lond",
+      "email": "gl@213",
+      "mobile": "7777778989",
+      "salary": "35000"
+    },
+    {
+      "id": 6,
+      "firstName": "ravi",
+      "lastName": "arora",
+      "email": "rv@456",
+      "mobile": 8080111111,
+      "salary": 21321
+    },
+    {
+      "id": 7,
+      "firstName": "bhande Sir",
+      "lastName": "Vijay",
+      "email": "vbhange@132",
+      "mobile": 777777777,
+      "salary": 777777
+    },
+    {
+      "id": 8,
+      "firstName": "tanajjjo",
+      "lastName": "mote",
+      "email": "ts@136",
+      "mobile": 7894654,
+      "salary": 24100
+    },
+    {
+      "id": 9,
+      "firstName": "Dinesh",
+      "lastName": "Mhaske",
+      "email": "dm@gmail.com",
+      "mobile": 54454554,
+      "salary": 10000
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
