@@ -1,0 +1,16 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "firstName": "rakesh@ranjan.com",
+      "lastName": "ranjanjhgjhgjhgjsdgsdgsdg",
+      "email": "rakesh@ranjan.com",
+      "mobile": 675765765765,
+      "salary": 765655767678
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
