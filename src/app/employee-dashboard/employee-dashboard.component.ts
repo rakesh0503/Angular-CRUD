@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { EmployeeModel } from './employee-dashboard.model';
 import {ApiService} from '../shared/api.service';
 
@@ -16,16 +16,17 @@ export class EmployeeDashboardComponent implements OnInit {
   employeedata !: any;
   showAdd !:boolean;
   showUpdate !: boolean;
+  submitted = false;
   constructor(private formbuilder:FormBuilder, 
     private api :ApiService) { }
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
-      firstName : [''],
-      lastName :[''],
-      email :[''],
-      mobile:[''],
-      salary:['']
+      firstName : ['',Validators.required],
+      lastName :['',Validators.required],
+      email :['',[Validators.required, Validators.email]],
+      mobile:['',[Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
+      salary:['',Validators.required]
     })
     this.getAllEmployee();
   }
@@ -110,4 +111,15 @@ export class EmployeeDashboardComponent implements OnInit {
     )
   }
 
+  onSubmit(){
+    this.submitted = true
+    if (this.formValue.invalid){
+      return
+    } 
+    alert("success")
+  }
+
+  clearForm(){
+    this.formValue.reset()
+  }
 }

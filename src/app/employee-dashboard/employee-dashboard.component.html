@@ -45,11 +45,13 @@
           <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body">
-            <form [formGroup]="formValue">
+            <form [formGroup]="formValue" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">First Name</label>
                   <input type="text" formControlName="firstName"    class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <span class="text-danger" *ngif="formValue.controls['firstName'].dirty && formValue.hasError('required','firstName')">*First Name is required</span>
                 </div>
 
                 <div class="mb-3">
@@ -63,8 +65,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Mobile No</label>
-                    <input type="number" formControlName="mobile" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="exampleInputMobile" class="form-label" >Mobile No</label>
+                    <input type="Number" ng-if="hasTrailer" for="typePhone" formControlName="mobile" class="form-control" id="exampleInputMobile" aria-describedby="emailHelp">
                 </div>
 
                 <div class="mb-3">
@@ -75,9 +77,9 @@
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
-          <button type="button"  (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
+          <button type="button" id="cancel" (click)="clearForm()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" [disabled]="!formValue.valid" *ngIf="showAdd" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+          <button type="button" [disabled]="!formValue.valid" *ngIf="showUpdate" (click)="updateEmployeeDetails()" class="btn btn-primary">Update</button>
         </div>
       </div>
     </div>
